@@ -1,0 +1,732 @@
+/* src/styles/custom.css */
+
+/* Main Color Variables */
+:root {
+  --main-color-1: #1e242b; /* Dark Blue */
+  --main-color-2: #2cd87f; /* Green */
+  --text-color: #ffffff; /* White text */
+  --accent-color: #f1c40f; /* Accent color */
+}
+
+.logo {
+  max-width: 2rem;
+}
+
+html {
+  background: var(--main-color-1);
+}
+
+body {
+  letter-spacing: 1px;
+}
+
+* {
+  line-height: 1.1rem;
+}
+
+/* Replace <uniquifier> and <weight> */
+.sour-gummy-uniqueClass {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200; /* Use the weight you need, for example: 400 */
+  font-style: normal;
+  font-variation-settings: "wdth" 100; /* Adjust the width variation if necessary */
+}
+
+.text-light {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100; /* Use the weight you need, for example: 400 */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.bg-main-color-1 {
+  background: var(--main-color-1);
+}
+
+.text-main-color {
+  color: var(--text-color);
+}
+
+/* Global Body Styles */
+body {
+  background-color: var(--main-color-1); /* Main background color */
+  color: var(--text-color); /* Text color */
+  font-family: Arial, sans-serif; /* Default font */
+  margin: 0;
+  padding: 0;
+}
+
+/* flex */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Default font sizes for large screens (Desktop) */
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+}
+
+.text-md {
+  font-size: 1rem; /* 16px */
+}
+
+.text-lg {
+  font-size: 1.25rem; /* 20px */
+}
+
+.text-xl {
+  font-size: 1.5rem; /* 24px */
+}
+
+.text-2xl {
+  font-size: 2rem; /* 32px */
+}
+
+.text-3xl {
+  font-size: 2.5rem; /* 40px */
+}
+
+.text-4xl {
+  font-size: 3rem; /* 48px */
+}
+
+/* Responsive font sizes for smaller screens (Mobile, Tablet, etc.) */
+
+/* Small screens (Mobile devices) */
+@media (max-width: 575.98px) {
+  .text-sm {
+    font-size: 0.75rem; /* 12px */
+  }
+  .text-md {
+    font-size: 0.875rem; /* 14px */
+  }
+  .text-lg {
+    font-size: 1rem; /* 16px */
+  }
+  .text-xl {
+    font-size: 1.25rem; /* 20px */
+  }
+  .text-2xl {
+    font-size: 1.5rem; /* 24px */
+  }
+  .text-3xl {
+    font-size: 1.75rem; /* 28px */
+  }
+  .text-4xl {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+/* Medium screens (Tablets, larger mobile screens) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .text-sm {
+    font-size: 0.875rem; /* 14px */
+  }
+  .text-md {
+    font-size: 1rem; /* 16px */
+  }
+  .text-lg {
+    font-size: 1.25rem; /* 20px */
+  }
+  .text-xl {
+    font-size: 1.5rem; /* 24px */
+  }
+  .text-2xl {
+    font-size: 1.75rem; /* 28px */
+  }
+  .text-3xl {
+    font-size: 2rem; /* 32px */
+  }
+  .text-4xl {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+/* Large screens (Desktops, larger tablets) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .text-sm {
+    font-size: 1rem; /* 16px */
+  }
+  .text-md {
+    font-size: 1.25rem; /* 20px */
+  }
+  .text-lg {
+    font-size: 1.5rem; /* 24px */
+  }
+  .text-xl {
+    font-size: 1.75rem; /* 28px */
+  }
+  .text-2xl {
+    font-size: 2rem; /* 32px */
+  }
+  .text-3xl {
+    font-size: 2.25rem; /* 36px */
+  }
+  .text-4xl {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+/* Extra Large screens (Large Desktops) */
+@media (min-width: 1024px) {
+  .text-sm {
+    font-size: 1.125rem; /* 18px */
+  }
+  .text-md {
+    font-size: 1.25rem; /* 20px */
+  }
+  .text-lg {
+    font-size: 1.5rem; /* 24px */
+  }
+  .text-xl {
+    font-size: 1.75rem; /* 28px */
+  }
+  .text-2xl {
+    font-size: 2rem; /* 32px */
+  }
+  .text-3xl {
+    font-size: 2.5rem; /* 40px */
+  }
+  .text-4xl {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* Font Weights (fw) */
+.fw-bold {
+  font-weight: bold;
+}
+.fw-normal {
+  font-weight: normal;
+}
+.fw-light {
+  font-weight: 300;
+}
+
+/* Padding (p) */
+.p-1 {
+  padding: 0.5rem;
+}
+.p-2 {
+  padding: 1rem;
+}
+.p-3 {
+  padding: 1.5rem;
+}
+.p-4 {
+  padding: 2rem;
+}
+
+/* Margin (m) */
+.m-1 {
+  margin: 0.5rem;
+}
+.m-2 {
+  margin: 1rem;
+}
+.m-3 {
+  margin: 1.5rem;
+}
+.m-4 {
+  margin: 2rem;
+}
+
+/* Spacing for top, right, bottom, left (mt, mr, mb, ml) */
+.mt-1 {
+  margin-top: 0.5rem;
+}
+.mt-2 {
+  margin-top: 1rem;
+}
+.mt-3 {
+  margin-top: 1.5rem;
+}
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+.mr-2 {
+  margin-right: 1rem;
+}
+.mr-3 {
+  margin-right: 1.5rem;
+}
+.mr-4 {
+  margin-right: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.ml-1 {
+  margin-left: 0.5rem;
+}
+.ml-2 {
+  margin-left: 1rem;
+}
+.ml-3 {
+  margin-left: 1.5rem;
+}
+.ml-4 {
+  margin-left: 2rem;
+}
+/* For custom button style */
+.btn-main {
+  background-color: var(--main-color-2); /* Main color */
+  color: var(--text-color); /* Text color */
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px; /* Pill shape */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px var(--main-color-2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-main:hover {
+  background-color: #f1c40f; /* Accent color on hover */
+  transform: rotate(5deg); /* Slight lift effect */
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-main span {
+  font-weight: bold;
+}
+
+.btn-main i {
+  transition: transform 0.3s ease;
+  margin-left: 10px; /* Space between the text and icon */
+}
+
+.btn-main:hover i {
+  transform: translateX(5px); /* Move icon slightly to the right on hover */
+}
+
+/* header */
+
+.component-h {
+  min-height: calc(100vh - 100px);
+}
+
+/* Links */
+.link {
+  color: var(--main-color-2);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: darken(var(--main-color-2), 10%);
+}
+
+/* Flexbox Container */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* General Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--main-color-1);
+  color: var(--text-color);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+.header-logo {
+  /* font-size: 1.6rem; */
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
+}
+
+/* Icon inside the hamburger */
+.hamburger-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate the hamburger into a cross */
+.menu-toggle.open .hamburger-icon {
+  transform: rotate(45deg); /* Rotate icon when menu is open */
+}
+
+.menu-toggle.open .hamburger-icon:before {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Links Container */
+.header-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color-1);
+  height: 100vh;
+  width: 250px;
+  padding: 2rem 1rem;
+  transform: translateX(-100%); /* Hidden by default */
+  transition: transform 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.header-links.open {
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Link Styling */
+.header-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem; /* Smaller font size */
+  margin: 1rem 0;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+.header-link:hover {
+  transform: rotate(10deg);
+  color: var(--main-color-2);
+}
+
+/* Active Link Styling */
+.header-link.active {
+  color: var(--main-color-2);
+  transform: rotate(5deg); /* Slight tilt for active page */
+}
+
+/* Responsive Design for Large Screens */
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none; /* Hide hamburger button on large screens */
+  }
+
+  .header-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    transform: none;
+    background: none;
+    height: auto;
+    width: auto;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .header-link {
+    margin: 0;
+  }
+}
+
+/* home */
+
+.hero-img {
+  width: 20rem;
+  /* border-radius: 50%; */
+  box-shadow: 0 3px 8px var(--main-color-2);
+}
+
+.rotate {
+  transform: rotate(1deg);
+}
+
+/* logo */
+
+/* logo */
+
+/* Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animated Circle */
+.logo-circle {
+  width: 1rem;
+  height: 1rem;
+  /* background: linear-gradient(45deg, var(--main-color-1), var(--main-color-2)); */
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  /* box-shadow: 0 8px 15px rgba(42, 216, 127, 0.5); */
+}
+
+/* Logo Text */
+.logo-text {
+  animation: slideIn 1s ease-out;
+}
+
+.logo-text span {
+  color: var(--main-color-2);
+  animation: colorShift 2s infinite alternate;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    color: var(--main-color-2);
+  }
+  100% {
+    color: #fff;
+  }
+}
+
+/* overlay start */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 99999999999999999;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.spin {
+  position: absolute;
+  box-shadow: 0px 100px 600px var(--main-color-2);
+  animation: spin 2s linear infinite;
+}
+
+/* services */
+
+.services-card {
+  padding: 1rem;
+  color: #000;
+  background: #fff;
+  max-width: 20rem;
+  min-height: 28rem;
+  transform: rotate(5deg);
+}
+
+/* team */
+
+.team-container {
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.team-member {
+  padding: 15px;
+}
+
+.team-member-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.team-member-card:hover {
+  transform: scale(1.05);
+}
+
+.team-member-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.team-member-info {
+  padding: 15px;
+}
+
+.team-member-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
+}
+
+.team-member-role {
+  font-size: 1rem;
+  color: #777;
+}
+
+.team-member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.team-member-card:hover .team-member-overlay {
+  opacity: 1;
+}
+
+.team-member-bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* animation */
+
+.animated-border {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(90deg, var(--main-color-1), transparent);
+  animation: move-bg 4s linear infinite;
+  rotate: -5deg;
+  z-index: -1;
+}
+
+@keyframes move-bg {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30%, -20%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.btn-teal {
+  background-color: var(--main-color-1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-teal:hover {
+  background-color: var(--main-color-1);
+  transform: scale(1.05);
+}
