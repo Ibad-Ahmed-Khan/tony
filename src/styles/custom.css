@@ -437,9 +437,83 @@ body {
   height: 100vh;
   width: 250px;
   padding: 2rem 1rem;
-  transform: translateX(-100%); /* Hidden by default */
+  transform: translateY(-100%); /* Hidden by default */
   transition: transform 0.5s ease-in-out;
   z-index: 1000;
+}
+
+@keyframes move-around-border {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-around-border-reverse {
+  0% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  25% {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+.moving-border {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  background-color: var(--main-color-2);
+  box-shadow: 0 0 10px var(--main-color-2), 0 0 20px var(--main-color-2),
+    0 0 30px var(--main-color-2);
+  animation: move-around-border 6s linear infinite;
+}
+.moving-border-reverse {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  background-color: var(--main-color-2);
+  box-shadow: 0 0 10px var(--main-color-2), 0 0 20px var(--main-color-2),
+    0 0 30px var(--main-color-2);
+  animation: move-around-border-reverse 6s linear infinite;
 }
 
 .header-links.open {
@@ -458,14 +532,13 @@ body {
 
 /* Hover Effect */
 .header-link:hover {
-  transform: rotate(10deg);
   color: var(--main-color-2);
 }
 
 /* Active Link Styling */
 .header-link.active {
   color: var(--main-color-2);
-  transform: rotate(5deg); /* Slight tilt for active page */
+  transform: scale(1.1) translateY(10px); /* Slight tilt for active page */
 }
 
 /* Responsive Design for Large Screens */
@@ -600,7 +673,7 @@ body {
   background: #fff;
   max-width: 20rem;
   min-height: 28rem;
-  transform: rotate(5deg);
+  cursor: pointer;
 }
 
 /* team */

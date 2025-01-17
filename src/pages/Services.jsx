@@ -123,6 +123,13 @@ const services = [
   },
 ];
 
+const handleScrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Smooth scrolling effect
+  });
+};
+
 const Services = () => {
   return (
     <div>
@@ -142,9 +149,11 @@ const Services = () => {
 
         <div className="flex-center flex-wrap gap-4">
           {services.map((service, index) => (
-            <div
+            <Link
+              onClick={handleScrollToTop}
+              to={service.path}
               key={index}
-              className="services-card flex-center flex-column rotate"
+              className="services-card flex-center flex-column  text-decoration-none"
               style={{
                 backgroundColor: "var(--main-color-1)",
                 border: "1px solid var(--main-color-2)",
@@ -164,7 +173,6 @@ const Services = () => {
             >
               {/* Icon Button */}
               <Link
-                to={service.path} // Use React Router's Link to navigate
                 style={{
                   position: "absolute", // Position it at the top-right
                   top: "10px", // Adjust this value for spacing from the top
@@ -173,7 +181,6 @@ const Services = () => {
                   fontSize: "2.5rem",
                   color: "var(--main-color-2)", // Green for icons
                   cursor: "pointer", // Pointer cursor to indicate clickability
-                  zIndex: 10, // Ensure the icon stays above other elements
                 }}
               >
                 <i className={service.icon}></i>
@@ -228,7 +235,7 @@ const Services = () => {
                   marginTop: "10px",
                 }}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>

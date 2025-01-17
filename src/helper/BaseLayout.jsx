@@ -11,6 +11,13 @@ const BaseLayout = () => {
     setLoading(true); // Set loader to true when location changes
   }, [location]);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling effect
+    });
+  };
+
   useEffect(() => {
     if (loading) {
       const timer = setTimeout(() => {
@@ -22,7 +29,9 @@ const BaseLayout = () => {
   {
     /* <Loader />; */
   }
-  return <div>{loading ? <Outlet /> : <Outlet />} </div>;
+  return (
+    <div onClick={handleScrollToTop}>{loading ? <Outlet /> : <Outlet />} </div>
+  );
 };
 
 export default BaseLayout;

@@ -19,9 +19,20 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling effect
+    });
+  };
+
   return (
     <header className="header logo-text ">
-      <Link className="header-logo text-white mt-2 header-link" to="/">
+      <Link
+        className="header-logo text-white mt-2 header-link"
+        to="/"
+        onClick={handleScrollToTop}
+      >
         <div className="flex-center ">
           <span
             className="fw-bold "
@@ -53,15 +64,18 @@ const Header = () => {
           {isMenuOpen ? "✖" : "☰"}
         </span>
       </button>
-      <nav className={`header-links  ${isMenuOpen ? "open" : ""}`}>
+      <nav className={`header-links ${isMenuOpen ? "open" : ""}`}>
         {Links.map((item, index) => (
           <Link
             key={index}
-            className={`header-link    ${
+            className={`header-link ${
               location.pathname === item.url ? "active" : ""
             }`}
             to={item.url}
-            onClick={toggleMenu}
+            onClick={() => {
+              toggleMenu();
+              handleScrollToTop();
+            }}
           >
             {item.name}
           </Link>
