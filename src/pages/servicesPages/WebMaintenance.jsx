@@ -137,7 +137,9 @@ const WebMaintenance = () => {
           Reach out to us today to ensure your website is always performing at
           its best with our web maintenance services.
         </p>
-        <button className="btn-teal btn-lg">Contact Us</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

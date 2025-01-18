@@ -10,6 +10,7 @@ import {
   FaJsSquare,
 } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const AppDevelopment = () => {
   // Define the mobile app development services as an array
@@ -119,7 +120,10 @@ const AppDevelopment = () => {
           Let's discuss your mobile app project and start building something
           amazing. Reach out to us today to get started!
         </p>
-        <button className="btn-teal btn-lg">Contact Us</button>
+
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

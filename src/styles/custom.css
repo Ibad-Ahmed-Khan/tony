@@ -437,7 +437,7 @@ body {
   height: 100vh;
   width: 250px;
   padding: 2rem 1rem;
-  transform: translateY(-100%); /* Hidden by default */
+  transform: translateX(-100%); /* Hidden by default */
   transition: transform 0.5s ease-in-out;
   z-index: 1000;
 }
@@ -538,13 +538,13 @@ body {
 /* Active Link Styling */
 .header-link.active {
   color: var(--main-color-2);
-  transform: scale(1.1) translateY(10px); /* Slight tilt for active page */
+  transform: scale(1.1) translateY(2px);
 }
 
 /* Responsive Design for Large Screens */
 @media (min-width: 1024px) {
   .menu-toggle {
-    display: none; /* Hide hamburger button on large screens */
+    display: none;
   }
 
   .header-links {
@@ -574,6 +574,22 @@ body {
 
 .rotate {
   transform: rotate(1deg);
+}
+
+/* Typing cursor */
+#animated-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white; /* Blinking cursor */
+  animation: blink-cursor 0.6s step-end infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink-cursor {
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* logo */
@@ -709,8 +725,10 @@ body {
 }
 
 .team-member-img {
-  width: 100%;
-  border-radius: 10px;
+  width: 100%; /* Make the image take the full width of the container */
+  height: 300px; /* Set a fixed height for all images */
+  object-fit: contain; /* Ensures the image fills the container without distortion */
+  border-radius: 8px; /* Optional: adds rounded corners to images */
 }
 
 .team-member-info {
@@ -754,6 +772,58 @@ body {
 .team-member-bio {
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color-1); /* Default background */
+  color: white;
+  font-size: 25px;
+  border: 3px solid var(--main-color-1);
+  border-radius: 50%;
+  z-index: 99;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: ""; /* Empty content so we can use CSS for the arrows */
+  font-size: 25px; /* Arrow size */
+  color: white;
+}
+
+.slick-prev::before {
+  content: "\2190"; /* Left arrow */
+}
+
+.slick-next::before {
+  content: "\2192"; /* Right arrow */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: darken(var(--main-color-1), 10%);
+  transform: scale(1.1);
+}
+
+.slick-prev:active,
+.slick-next:active {
+  background-color: darken(
+    var(--main-color-1),
+    20%
+  ); /* Darken background more when active */
+  transform: scale(
+    1
+  ); /* Optionally reset the scale when the button is active */
 }
 
 /* animation */
@@ -802,4 +872,25 @@ body {
 .btn-teal:hover {
   background-color: var(--main-color-1);
   transform: scale(1.05);
+}
+
+/* spinner */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }

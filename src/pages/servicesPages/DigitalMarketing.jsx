@@ -183,7 +183,9 @@ const DigitalMarketing = () => {
           Let's take your digital marketing efforts to the next level. Reach out
           to us today and start seeing real results!
         </p>
-        <button className="btn-teal btn-lg">Contact Us</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

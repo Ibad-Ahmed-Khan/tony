@@ -100,7 +100,9 @@ const ShopifyEcommerce = () => {
           Let us help you set up, customize, and optimize your Shopify store for
           success. Start building your eCommerce dream today!
         </p>
-        <button className="btn-teal btn-lg">Get Started</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

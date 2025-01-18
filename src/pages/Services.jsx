@@ -174,20 +174,20 @@ const Services = () => {
               {/* Icon Button */}
               <Link
                 style={{
-                  position: "absolute", // Position it at the top-right
-                  top: "10px", // Adjust this value for spacing from the top
-                  left: "50%", // Center it horizontally
-                  transform: "translateX(-50%)", // Center it exactly
+                  position: "absolute",
+                  top: "10px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
                   fontSize: "2.5rem",
-                  color: "var(--main-color-2)", // Green for icons
-                  cursor: "pointer", // Pointer cursor to indicate clickability
+                  color: "var(--main-color-2)",
+                  cursor: "pointer",
                 }}
               >
                 <i className={service.icon}></i>
               </Link>
               <Link to={service.path}>
                 <i
-                  class="bi bi-box-arrow-up-right"
+                  className="bi bi-box-arrow-up-right"
                   style={{
                     borderRadius: "0.5rem",
                     position: "absolute",
@@ -195,7 +195,6 @@ const Services = () => {
                     right: "10px",
                     color: "var(--main-color-2)",
                     cursor: "pointer",
-                    zIndex: 10,
                   }}
                 ></i>
               </Link>

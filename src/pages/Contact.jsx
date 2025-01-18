@@ -1,19 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from "emailjs-com";
+import { useToast } from "@chakra-ui/react";
 
 const Contact = () => {
+  const toast = useToast();
+
   // Initialize useForm from react-hook-form
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // Added reset to clear form
   } = useForm();
 
   // Form submission handler
-  const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
+  const onSubmit = (data, e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Send form data using EmailJS
+    emailjs
+      .sendForm(
+        "service_8myjqny", // Your service ID
+        "template_lczid9g", // Your template ID
+        e.target, // Pass the HTML form element instead of 'data'
+        "jNmaoAfOL34QO0M_H" // Your user ID
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast({
+            position: "top-right",
+            title: "Form Submitted",
+            description: "Thank you for contacting us!",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
+          reset(); // Reset the form after successful submission
+        },
+        (error) => {
+          console.log(error.text);
+          toast({
+            position: "top-right",
+            title: "Error",
+            description: "There was an error submitting the form.",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+          });
+        }
+      );
   };
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="container py-5">
@@ -30,7 +70,7 @@ const Contact = () => {
       <div className="row g-4">
         {/* Contact Form */}
         <div className="col-md-6">
-          <div className="animated-border card p-4 shadow-sm">
+          <div className=" card p-4 shadow-sm">
             <h4 className="text-teal mb-3">Contact Form</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* Full Name */}
@@ -40,15 +80,13 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control "
                   id="name"
                   placeholder="Enter your name"
                   {...register("name", { required: "Full Name is required" })}
                 />
                 {errors.name && (
-                  <p
-                    style={{ color: "var(--main-color-2)", fontSize: "0.8rem" }}
-                  >
+                  <p style={{ color: "red", fontSize: "0.7rem" }}>
                     {errors.name.message}
                   </p>
                 )}
@@ -61,7 +99,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control "
                   id="email"
                   placeholder="Enter your email"
                   {...register("email", {
@@ -74,9 +112,7 @@ const Contact = () => {
                   })}
                 />
                 {errors.email && (
-                  <p
-                    style={{ color: "var(--main-color-2)", fontSize: "0.8rem" }}
-                  >
+                  <p style={{ color: "red", fontSize: "0.7rem" }}>
                     {errors.email.message}
                   </p>
                 )}
@@ -95,16 +131,18 @@ const Contact = () => {
                   {...register("message", { required: "Message is required" })}
                 ></textarea>
                 {errors.message && (
-                  <p
-                    style={{ color: "var(--main-color-2)", fontSize: "0.8rem" }}
-                  >
+                  <p style={{ color: "red", fontSize: "0.7rem" }}>
                     {errors.message.message}
                   </p>
                 )}
               </div>
 
-              <button type="submit" className="btn-teal btn-lg w-100">
-                Send Message
+              <button
+                type="submit"
+                className="btn-teal btn-lg w-100"
+                style={{ minHeight: "2rem" }}
+              >
+                {isLoading ? <div className="spinner"></div> : "Send Message"}
               </button>
             </form>
           </div>
@@ -112,7 +150,7 @@ const Contact = () => {
 
         {/* Contact Details */}
         <div className="col-md-6">
-          <div className="animated-border card p-4 shadow-sm">
+          <div className=" card p-4 shadow-sm">
             <h4 className="text-teal mb-3">Contact Information</h4>
             <ul className="list-unstyled">
               <li className="mb-3 d-flex align-items-center">

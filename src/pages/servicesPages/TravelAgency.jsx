@@ -102,7 +102,9 @@ const TravelAgency = () => {
           Start planning your dream trip with us today. From flights to
           accommodations, we handle all the details!
         </p>
-        <button className="btn-teal btn-lg">Get Started</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

@@ -122,7 +122,9 @@ const GraphicDesign = () => {
           beautiful web design, we’re here to help. Let’s start creating
           something amazing together!
         </p>
-        <button className="btn-teal btn-lg">Contact Us</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

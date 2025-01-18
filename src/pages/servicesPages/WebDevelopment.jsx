@@ -186,7 +186,9 @@ const WebDevelopment = () => {
           functional website that will elevate your online presence and
           business.
         </p>
-        <button className="btn-teal btn-lg">Contact Us</button>
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
       </div>
     </div>
   );

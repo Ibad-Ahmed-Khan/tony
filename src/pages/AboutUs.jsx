@@ -68,9 +68,9 @@ const AboutUs = () => {
   ];
 
   const galleryImages = [
-    "https://via.placeholder.com/1200x500/1e242b/ffffff?text=Image+1",
-    "https://via.placeholder.com/1200x500/1e242b/ffffff?text=Image+2",
-    "https://via.placeholder.com/1200x500/1e242b/ffffff?text=Image+3",
+    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Business milestone
+    "https://images.unsplash.com/flagged/photo-1576485436509-a7d286952b65?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Teamwork and col
+    "https://images.unsplash.com/photo-1698047681469-8e0c19e80a66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
   return (

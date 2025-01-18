@@ -1,6 +1,7 @@
 import React from "react";
 import { FaServer, FaCloud, FaTools, FaDatabase, FaLock } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const DomainHosting = () => {
   const services = [
@@ -68,7 +69,12 @@ const DomainHosting = () => {
           SSL certificates, we ensure your online presence is secure, fast, and
           scalable.
         </p>
-        <button className=" btn-teal btn-lg">Get Started</button>
+        {/* <Link>Get Started</Link> */}
+
+        <Link to="/contact" className="btn-teal btn-lg">
+          Get Started
+        </Link>
+        {/* <button></button> */}
       </div>
 
       {/* Section 2: Services */}
