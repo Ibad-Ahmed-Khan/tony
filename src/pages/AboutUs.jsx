@@ -17,7 +17,6 @@ const AboutUs = () => {
     marginTop: "3rem",
     marginInline: "3rem",
     cursor: "pointer",
-    zIndex: 1000,
   };
 
   const settings = {
@@ -97,7 +96,7 @@ const AboutUs = () => {
             >
               <div className="moving-border" />
               <div className="card-body" style={{ minHeight: "10rem" }}>
-                <h3>
+                <h3 className="flex-center gap-4">
                   {item.icon} {item.title}
                 </h3>
                 <p>{item.text}</p>

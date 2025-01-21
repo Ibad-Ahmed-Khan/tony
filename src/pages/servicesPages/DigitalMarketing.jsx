@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
 import Google from "../../assets/google.png";
+import { Link } from "react-router-dom";
 
 const DigitalMarketing = () => {
   const services = [

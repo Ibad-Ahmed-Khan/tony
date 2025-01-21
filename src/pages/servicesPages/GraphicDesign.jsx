@@ -2,6 +2,7 @@ import React from "react";
 import AdobeLogo from "../../assets/adobe.png"; // Path to Adobe logo image
 import { FaApple, FaSketch, FaFigma, FaPaintBrush } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const GraphicDesign = () => {
   const services = [

@@ -33,26 +33,23 @@ const Header = () => {
         to="/"
         onClick={handleScrollToTop}
       >
-        <div className="flex-center ">
+        <div
+          className="flex-center "
+          style={{
+            marginTop: "0.5rem",
+          }}
+        >
           <span
             className="fw-bold "
             style={{
+              marginTop: "0.2rem",
               minWidth: "1rem",
-              minHeight: "2px",
+              minHeight: "5px",
               background: "#2ad87f",
               opacity: "0.4",
             }}
           />
-          <img src={Logo} alt="Company" className="logo" />
-          <span
-            className="fw-bold "
-            style={{
-              minWidth: "1rem",
-              minHeight: "2px",
-              background: "#2ad87f",
-              opacity: "0.4",
-            }}
-          />
+          <h2 className="text-lg">Digital Fue</h2>
         </div>
       </Link>
       {/* <div className={`overlay  ${isMenuOpen ? "rotate" : ""}`} /> */}

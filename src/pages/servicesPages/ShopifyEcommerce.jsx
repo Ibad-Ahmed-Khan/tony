@@ -1,6 +1,7 @@
 import React from "react";
 import { FaShoppingCart, FaStore, FaTruck, FaBox } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const ShopifyEcommerce = () => {
   const services = [

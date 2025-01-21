@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGlobe, FaHotel, FaPlane, FaCar, FaBicycle } from "react-icons/fa";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const TravelAgency = () => {
   const services = [

@@ -22,7 +22,7 @@ const Contact = () => {
     // Send form data using EmailJS
     emailjs
       .sendForm(
-        "service_8myjqny", // Your service ID
+        "service_n7kvvjp", // Your service ID
         "template_lczid9g", // Your template ID
         e.target, // Pass the HTML form element instead of 'data'
         "jNmaoAfOL34QO0M_H" // Your user ID
@@ -60,7 +60,10 @@ const Contact = () => {
       {/* Section: Contact Header */}
       <div className="text-center mb-5">
         <h1 className="display-4 text-teal">Get in Touch</h1>
-        <p className="lead mx-auto" style={{ maxWidth: "800px" }}>
+        <p
+          className="lead mx-auto"
+          style={{ maxWidth: "900px", color: "#fff", fontSize: "1rem" }}
+        >
           We'd love to hear from you! Fill out the form below or reach out to us
           via phone or email. Our team is here to assist you.
         </p>

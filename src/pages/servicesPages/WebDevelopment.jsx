@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Slider from "react-slick";
 import IconSlider from "../../components/IconSlider";
+import { Link } from "react-router-dom";
 
 const WebDevelopment = () => {
   const services = [

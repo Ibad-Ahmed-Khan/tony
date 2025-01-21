@@ -137,7 +137,12 @@ const Services = () => {
         <div className="text-center mb-5">
           <h1 className="display-4">Our Services</h1>
           <p
-            style={{ maxWidth: "900px", color: "#fff", fontSize: "1rem" }}
+            style={{
+              maxWidth: "900px",
+              color: "#fff",
+              fontSize: "1rem",
+              paddingInline: "1rem",
+            }}
             className="lead mx-auto text-xs "
           >
             We offer a wide range of services to meet the diverse needs of our

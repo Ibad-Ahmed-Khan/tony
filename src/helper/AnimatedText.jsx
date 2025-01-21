@@ -3,10 +3,10 @@ import "../styles/custom.css";
 
 const AnimatedText = () => {
   const phrases = [
-    "Your trusted travel consultant.",
+    "Your Trusted Travel Consultant.",
     "Experienced Web Developer.",
-    "WordPress & Shopify experts.",
-    "Innovative web solutions.",
+    "WordPress & Shopify Experts.",
+    "Innovative Web Solutions.",
   ];
 
   const [text, setText] = useState(""); // Current text to display
