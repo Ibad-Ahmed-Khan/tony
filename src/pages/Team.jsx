@@ -79,7 +79,7 @@ const Team = () => {
   };
 
   return (
-    <div className="team-container m-4">
+    <div className="team-container m-4 logo-text">
       <h2 className="team-title">Meet Our Team</h2>
       <Slider {...settings}>
         {teamMembers.map((member, index) => (

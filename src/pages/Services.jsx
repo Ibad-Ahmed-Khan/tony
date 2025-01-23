@@ -9,52 +9,6 @@ import Six from "../assets/imgs/six.jpeg";
 import Seven from "../assets/imgs/seven.jpeg";
 import Eight from "../assets/imgs/eight.jpeg";
 
-// const services = [
-//   {
-//     title: "Google Ads/PPC Campaigns: Drive Your Business Growth",
-//     description: `At TonyHub, we specialize in leveraging Google Ads to place your business at the forefront of search engine results, driving targeted traffic and achieving measurable results.`,
-//   },
-//   {
-//     title: "Introduction to Google Ads/PPC Campaigns",
-//     description: `In today’s digital age, effective online advertising is essential. Google Ads, also known as Pay-Per-Click (PPC) advertising, is a powerful platform to ensure your business reaches its target audience.`,
-//   },
-//   {
-//     title: "Why Choose Google Ads for Your Business?",
-//     description: `TonyHub helps you understand the benefits of Google Ads: precise targeting, cost-effectiveness, instant visibility, and scalability tailored to your business needs.`,
-//   },
-//   {
-//     title: "Reach the Right Audience",
-//     description: `Google Ads enables precise targeting based on keywords, location, demographics, and user behavior. TonyHub ensures your ads reach people actively searching for what you offer.`,
-//   },
-//   {
-//     title: "Cost-Effective Advertising",
-//     description: `With PPC campaigns from TonyHub, you only pay when a user clicks on your ad, ensuring your budget is spent effectively for measurable results.`,
-//   },
-//   {
-//     title: "Immediate Results",
-//     description: `Unlike organic strategies, Google Ads delivers instant visibility and traffic. TonyHub’s expertise ensures quick results for your promotions or time-sensitive campaigns.`,
-//   },
-//   {
-//     title: "Scalable and Flexible",
-//     description: `Google Ads is tailored to fit any budget and scale with your business growth. TonyHub provides solutions for both small businesses and large enterprises.`,
-//   },
-//   {
-//     title: "Our Google Ads/PPC Campaign Services",
-//     description: `TonyHub offers a range of services, from campaign strategy and setup to ad creation and optimization, ensuring your campaigns deliver maximum ROI.`,
-//   },
-//   {
-//     title: "Campaign Strategy and Setup",
-//     description: `TonyHub conducts in-depth keyword research, competitor analysis, and strategic campaign setup focused on maximizing return on investment.`,
-//   },
-//   {
-//     title: "Ad Creation and Optimization",
-//     description: `We craft compelling ad copy and engaging visuals, run A/B testing, and provide regular updates to keep your ads relevant and high-performing.`,
-//   },
-//   {
-//     title: "Targeting and Bidding Strategies",
-//     description: `TonyHub specializes in advanced audience segmentation and smart bidding strategies to maximize your ad spend efficiency and reach the right audience.`,
-//   },
-// ];
 const services = [
   {
     title: "Website Development",

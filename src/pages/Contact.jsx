@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
-import { useToast } from "@chakra-ui/react";
+import { Spinner, useToast } from "@chakra-ui/react";
 
 const Contact = () => {
   const toast = useToast();
@@ -14,49 +14,60 @@ const Contact = () => {
     formState: { errors },
     reset, // Added reset to clear form
   } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
   // Form submission handler
   const onSubmit = (data, e) => {
     e.preventDefault(); // Prevent the default form submission
+    setIsLoading(true); // Set loading state to true when form submission starts
 
     // Send form data using EmailJS
     emailjs
       .sendForm(
-        "service_n7kvvjp", // Your service ID
-        "template_lczid9g", // Your template ID
+        "service_4y6u0e9", // Your service ID
+        "template_r7nx0ah", // Your template ID
         e.target, // Pass the HTML form element instead of 'data'
-        "jNmaoAfOL34QO0M_H" // Your user ID
+        "Vc_UrR3Ehm2OYCrms" // Your user ID
       )
       .then(
         (result) => {
           console.log(result.text);
           toast({
             position: "top-right",
-            title: "Form Submitted",
-            description: "Thank you for contacting us!",
+            title: "Digital Fue!",
+            description:
+              "Thank you for contacting us! We’ll will respond shortly.",
             status: "success",
             duration: 3000,
             isClosable: true,
           });
           reset(); // Reset the form after successful submission
+          setIsLoading(false); // Set loading state to false after success
         },
         (error) => {
           console.log(error.text);
           toast({
             position: "top-right",
-            title: "Error",
+            title: "Ooops",
             description: "There was an error submitting the form.",
             status: "error",
             duration: 3000,
             isClosable: true,
           });
+          setIsLoading(false); // Set loading state to false after error
         }
       );
   };
-  const [isLoading, setIsLoading] = useState(false);
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent default form submission on Enter
+      document.querySelector("button[type='submit']").click(); // Trigger the submit button
+    }
+  };
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 logo-text">
       {/* Section: Contact Header */}
       <div className="text-center mb-5">
         <h1 className="display-4 text-teal">Get in Touch</h1>
@@ -78,34 +89,37 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* Full Name */}
               <div className="mb-3">
-                <label htmlFor="name" className="form-label">
+                <label htmlFor="full_name" className="form-label">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  className="form-control "
-                  id="name"
+                  className="form-control"
+                  id="full_name"
+                  name="full_name" // Updated name to match EmailJS template variable
                   placeholder="Enter your name"
-                  {...register("name", { required: "Full Name is required" })}
+                  {...register("full_name", {
+                    required: "Full Name is required",
+                  })}
                 />
-                {errors.name && (
+                {errors.full_name && (
                   <p style={{ color: "red", fontSize: "0.7rem" }}>
-                    {errors.name.message}
+                    {errors.full_name.message}
                   </p>
                 )}
               </div>
-
               {/* Email Address */}
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">
+                <label htmlFor="email_address" className="form-label">
                   Email Address
                 </label>
                 <input
                   type="email"
-                  className="form-control "
-                  id="email"
+                  className="form-control"
+                  id="email_address"
+                  name="email_address" // Updated name to match EmailJS template variable
                   placeholder="Enter your email"
-                  {...register("email", {
+                  {...register("email_address", {
                     required: "Email is required",
                     pattern: {
                       value:
@@ -114,13 +128,12 @@ const Contact = () => {
                     },
                   })}
                 />
-                {errors.email && (
+                {errors.email_address && (
                   <p style={{ color: "red", fontSize: "0.7rem" }}>
-                    {errors.email.message}
+                    {errors.email_address.message}
                   </p>
                 )}
               </div>
-
               {/* Message */}
               <div className="mb-3">
                 <label htmlFor="message" className="form-label">
@@ -129,6 +142,7 @@ const Contact = () => {
                 <textarea
                   className="form-control"
                   id="message"
+                  name="message" // No change needed here
                   rows="4"
                   placeholder="Type your message here"
                   {...register("message", { required: "Message is required" })}
@@ -139,13 +153,22 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-
               <button
                 type="submit"
                 className="btn-teal btn-lg w-100"
-                style={{ minHeight: "2rem" }}
+                style={{
+                  minHeight: "2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                disabled={isLoading} // Disable the button while loading
               >
-                {isLoading ? <div className="spinner"></div> : "Send Message"}
+                {isLoading ? (
+                  <Spinner size="sm" color="white" />
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
@@ -158,15 +181,17 @@ const Contact = () => {
             <ul className="list-unstyled">
               <li className="mb-3 d-flex align-items-center">
                 <FaPhoneAlt className="me-3 text-teal" size={20} />
-                <span>(+123) 456-7890</span>
+                <span className="text-black ">(+123) 456-7890</span>
               </li>
               <li className="mb-3 d-flex align-items-center">
                 <FaEnvelope className="me-3 text-teal" size={20} />
-                <span>support@example.com</span>
+                <span className="text-black ">support@example.com</span>
               </li>
               <li className="d-flex align-items-center">
                 <FaMapMarkerAlt className="me-3 text-teal" size={20} />
-                <span>123 Main Street, City, Country</span>
+                <span className="text-black ">
+                  123 Main Street, City, Country
+                </span>
               </li>
             </ul>
             <div className="mt-4">
