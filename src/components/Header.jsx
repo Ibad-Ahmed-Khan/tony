@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/logoTony.png";
 import "../styles/custom.css"; // Import the custom CSS
-
+import Bar from "../assets/bar.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation(); // Get the current route
@@ -39,7 +38,7 @@ const Header = () => {
             marginTop: "0.5rem",
           }}
         >
-          <span
+          {/* <span
             className="fw-bold "
             style={{
               marginTop: "0.2rem",
@@ -48,7 +47,8 @@ const Header = () => {
               background: "#2ad87f",
               opacity: "0.4",
             }}
-          />
+          /> */}
+          <img src={Bar} style={{ maxWidth: "1rem" }} alt="" />
           <h2 className="text-lg">Digital Fue</h2>
         </div>
       </Link>
