@@ -18,6 +18,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ShopifyEcommerce from "./pages/servicesPages/ShopifyEcommerce";
 import TravelAgency from "./pages/servicesPages/TravelAgency";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/travel-agency-services" element={<TravelAgency />} />
           </Route>
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
