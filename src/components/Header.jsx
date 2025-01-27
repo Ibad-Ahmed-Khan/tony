@@ -21,12 +21,12 @@ const Header = () => {
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scrolling effect
+      behavior: "smooth",
     });
   };
 
   return (
-    <header className="header logo-text ">
+    <header className="header logo-text">
       <Link
         className="header-logo text-white mt-2 header-link"
         to="/"

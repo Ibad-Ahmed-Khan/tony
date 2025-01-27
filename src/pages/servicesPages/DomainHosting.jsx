@@ -56,6 +56,13 @@ const DomainHosting = () => {
     },
   ];
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container py-5 logo-text">
       {/* Section 1: Introduction */}
@@ -71,7 +78,11 @@ const DomainHosting = () => {
         </p>
         {/* <Link>Get Started</Link> */}
 
-        <Link to="/contact" className="btn-teal btn-lg">
+        <Link
+          to="/contact"
+          className="btn-teal btn-lg logo-text"
+          onClick={handleScrollToTop}
+        >
           Get Started
         </Link>
         {/* <button></button> */}

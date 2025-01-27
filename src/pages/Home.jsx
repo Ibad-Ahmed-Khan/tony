@@ -8,6 +8,13 @@ import Contact from "./Contact";
 import AnimatedText from "../helper/AnimatedText";
 
 const Home = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="home text-light logo-text">
       <div className="d-flex justify-content-center align-items-center component-h">
@@ -24,7 +31,11 @@ const Home = () => {
                 for businesses, including custom websites, e-commerce platforms,
                 and WordPress & Shopify solutions.
               </p>
-              <Link to="/services" className="me-2 text-decoration-none">
+              <Link
+                to="/services"
+                className="me-2 text-decoration-none"
+                onClick={handleScrollToTop}
+              >
                 <button className="btn btn-lg btn-main text-white fs-6 py-3 px-4 rounded-pill d-flex align-items-center justify-content-center">
                   Get Started
                   <i className="bi bi-arrow-right"></i>

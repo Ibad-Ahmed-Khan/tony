@@ -83,6 +83,13 @@ const WebMaintenance = () => {
     },
   ];
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container py-5 logo-text">
       {/* Section 1: Introduction */}
@@ -138,7 +145,11 @@ const WebMaintenance = () => {
           Reach out to us today to ensure your website is always performing at
           its best with our web maintenance services.
         </p>
-        <Link to="/contact" className="btn-teal btn-lg">
+        <Link
+          to="/contact"
+          className="btn-teal btn-lg logo-text"
+          onClick={handleScrollToTop}
+        >
           Get Started
         </Link>
       </div>

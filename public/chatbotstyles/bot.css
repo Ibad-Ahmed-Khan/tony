@@ -1,0 +1,57 @@
+/* Root variables for theme colors */
+:root {
+  --bot-header-bg: #1e242b; /* Dark Blue */
+  --bot-accent-color: #2cd87f; /* Green */
+  --bot-text-color: #ffffff; /* White text */
+  --bot-input-bg: #1e242b; /* Dark background */
+  --bot-placeholder-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Light gray for placeholder */
+}
+
+/* Header styling */
+.bpw-header-container {
+  background-color: var(--bot-header-bg);
+  color: var(--bot-text-color);
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: 200;
+}
+
+/* User message styling */
+.bpw-from-user .bpw-chat-bubble {
+  background-color: var(--bot-accent-color);
+  color: var(--bot-text-color);
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: 200;
+}
+
+/* Bot message styling */
+.bpw-from-bot .bpw-chat-bubble {
+  background-color: var(--bot-header-bg);
+  color: var(--bot-text-color);
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: 200;
+}
+
+/* Input field styling */
+.bpw-composer {
+  background-color: var(--bot-input-bg);
+  color: var(--bot-text-color);
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: 100;
+}
+
+/* Placeholder text styling */
+.bpw-composer-placeholder {
+  color: var(--bot-placeholder-color);
+}
+
+/* Avatar styling */
+.bpw-bot-avatar img,
+.bpw-bot-avatar svg {
+  border-radius: 50%;
+  background-color: var(--bot-accent-color);
+}

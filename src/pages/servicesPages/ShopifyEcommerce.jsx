@@ -50,6 +50,13 @@ const ShopifyEcommerce = () => {
     },
   ];
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container py-5 logo-text">
       {/* Section 1: Introduction */}
@@ -101,7 +108,11 @@ const ShopifyEcommerce = () => {
           Let us help you set up, customize, and optimize your Shopify store for
           success. Start building your eCommerce dream today!
         </p>
-        <Link to="/contact" className="btn-teal btn-lg">
+        <Link
+          to="/contact"
+          className="btn-teal btn-lg logo-text"
+          onClick={handleScrollToTop}
+        >
           Get Started
         </Link>
       </div>

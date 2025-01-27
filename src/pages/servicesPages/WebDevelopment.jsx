@@ -91,6 +91,13 @@ const WebDevelopment = () => {
     ],
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container py-5 logo-text">
       {/* Section 1: Introduction */}
@@ -187,7 +194,11 @@ const WebDevelopment = () => {
           functional website that will elevate your online presence and
           business.
         </p>
-        <Link to="/contact" className="btn-teal btn-lg">
+        <Link
+          to="/contact"
+          className="btn-teal btn-lg logo-text"
+          onClick={handleScrollToTop}
+        >
           Get Started
         </Link>
       </div>
